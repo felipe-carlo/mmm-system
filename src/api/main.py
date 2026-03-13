@@ -9,7 +9,7 @@ app = FastAPI(title="MMM System API", version="0.1.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["http://localhost:3000", "http://frontend:3000"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
