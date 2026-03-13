@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.env
+*.egg-info/
+dist/
+.venv/
+data/raw/
+data/processed/
+data/models/
+*.duckdb
+*.parquet
+.ipynb_checkpoints/
