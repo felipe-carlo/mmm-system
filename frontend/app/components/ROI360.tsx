@@ -51,7 +51,7 @@ export default function ROI360() {
             <BarChart data={waterfall} margin={{ left: 10, right: 10 }}>
               <XAxis dataKey="name" tick={{ fontSize: 11 }} angle={-30} textAnchor="end" height={60} />
               <YAxis tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`} tick={{ fontSize: 11 }} />
-              <Tooltip formatter={(v: number) => fmt(v)} />
+              <Tooltip formatter={(v) => fmt(Number(v))} />
               <Bar dataKey="value" radius={[4, 4, 0, 0]}>
                 {waterfall.map((entry, i) => (
                   <Cell key={i} fill={entry.color} />
@@ -106,7 +106,7 @@ export default function ROI360() {
             <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
             <XAxis dataKey="week" tick={{ fontSize: 10 }} />
             <YAxis tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`} tick={{ fontSize: 11 }} />
-            <Tooltip formatter={(v: number) => fmt(v)} />
+            <Tooltip formatter={(v) => fmt(Number(v))} />
             <Legend />
             <Area type="monotone" dataKey="baseline" stackId="1" fill="#94a3b8" stroke="#94a3b8" name="Baseline" />
             <Area type="monotone" dataKey="google_ads" stackId="1" fill="#4285F4" stroke="#4285F4" name="Google Ads" />

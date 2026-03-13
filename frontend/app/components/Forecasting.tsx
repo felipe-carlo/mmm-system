@@ -75,7 +75,7 @@ export default function Forecasting() {
             <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
             <XAxis dataKey="week" tick={{ fontSize: 11 }} />
             <YAxis tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`} tick={{ fontSize: 11 }} />
-            <Tooltip formatter={(v: number) => fmt(v)} />
+            <Tooltip formatter={(v) => fmt(Number(v))} />
             <Legend />
             <Area type="monotone" dataKey="optimistic" stroke="var(--success)" fill="var(--success)" fillOpacity={0.08} strokeWidth={1} name="Otimista" />
             <Area type="monotone" dataKey="base" stroke="var(--primary)" fill="var(--primary)" fillOpacity={0.15} strokeWidth={2.5} name="Base" />

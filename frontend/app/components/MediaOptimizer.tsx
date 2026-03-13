@@ -83,7 +83,7 @@ export default function MediaOptimizer() {
             <BarChart data={allocationData} layout="vertical" margin={{ left: 70 }}>
               <XAxis type="number" tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`} tick={{ fontSize: 11 }} />
               <YAxis type="category" dataKey="name" tick={{ fontSize: 11 }} />
-              <Tooltip formatter={(v: number) => fmt(v)} />
+              <Tooltip formatter={(v) => fmt(Number(v))} />
               <Legend />
               <Bar dataKey="current" fill="#cbd5e1" name="Atual" radius={[0, 4, 4, 0]} />
               <Bar dataKey="recommended" name="Recomendado" radius={[0, 4, 4, 0]}>
@@ -102,7 +102,7 @@ export default function MediaOptimizer() {
               <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
               <XAxis dataKey="spend" tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`} tick={{ fontSize: 11 }} />
               <YAxis tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`} tick={{ fontSize: 11 }} />
-              <Tooltip formatter={(v: number) => fmt(v)} />
+              <Tooltip formatter={(v) => fmt(Number(v))} />
               <Legend />
               {saturationData.map((s) => (
                 <Line
