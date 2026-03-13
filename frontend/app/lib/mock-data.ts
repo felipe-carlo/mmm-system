@@ -42,6 +42,38 @@ export const optimizedAllocation = channels.map((ch) => {
   };
 });
 
+export const syncStatus = {
+  spreadsheet_connected: true,
+  spreadsheet_title: "MMM Data - Q1 2026",
+  tabs: {
+    media_spend: { last_synced: "2026-03-13T10:30:00Z", rows: 416, status: "success" },
+    kpi: { last_synced: "2026-03-13T10:30:00Z", rows: 416, status: "success" },
+    external_factors: { last_synced: "2026-03-12T15:00:00Z", rows: 416, status: "success" },
+    channel_config: { last_synced: "2026-03-10T09:00:00Z", rows: 8, status: "success" },
+  },
+  channels: {
+    google_ads: { last_synced: "2026-03-13T10:30:00Z", rows: 416, status: "success" },
+    meta_ads: { last_synced: "2026-03-13T10:30:00Z", rows: 416, status: "success" },
+    tiktok: { last_synced: "2026-03-12T15:00:00Z", rows: 390, status: "success" },
+    tv: { last_synced: "2026-03-11T12:00:00Z", rows: 416, status: "success" },
+    radio: { last_synced: "2026-03-11T12:00:00Z", rows: 416, status: "success" },
+    ooh: { last_synced: "2026-03-10T09:00:00Z", rows: 400, status: "warning" },
+    influencer: { last_synced: "2026-03-10T09:00:00Z", rows: 350, status: "success" },
+    events: { last_synced: null as string | null, rows: null as number | null, status: "never_synced" },
+  },
+};
+
+export const channelColors: Record<string, string> = {
+  google_ads: "#4285F4",
+  meta_ads: "#1877F2",
+  tiktok: "#000000",
+  tv: "#E91E63",
+  radio: "#FF9800",
+  ooh: "#9C27B0",
+  influencer: "#00BCD4",
+  events: "#4CAF50",
+};
+
 export const insights = [
   { type: "recommendation", priority: 1, title: "Canal com maior ROI: tiktok", description: "TikTok tem o maior retorno (ROI: 3.20x). Considere aumentar investimento.", channel: "tiktok", impact: "ROI 3.2x" },
   { type: "alert", priority: 1, title: "Canal com baixo retorno: events", description: "Events tem ROI de apenas 0.60x. Considere reduzir investimento ou revisar estrategia.", channel: "events", impact: "ROI 0.6x" },

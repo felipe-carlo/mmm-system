@@ -110,3 +110,30 @@ class InsightItem(BaseModel):
 class WeeklyInsightsResponse(BaseModel):
     generated_at: str
     insights: list[InsightItem]
+
+
+# --- Granular Sync schemas ---
+
+
+class TabSyncResponse(BaseModel):
+    status: str  # "success" | "error"
+    tab_name: str
+    rows_fetched: int
+    last_synced: str  # ISO 8601 timestamp
+    warnings: list[str]
+
+
+class ChannelSyncResponse(BaseModel):
+    status: str
+    channel_name: str
+    rows_fetched: int
+    date_range: dict[str, str]  # {"start": "2025-01-06", "end": "2026-03-09"}
+    last_synced: str
+    warnings: list[str]
+
+
+class SyncStatusResponse(BaseModel):
+    spreadsheet_connected: bool
+    spreadsheet_title: str | None = None
+    tabs: dict[str, dict]  # tab_name -> {"last_synced", "rows", "status"}
+    channels: dict[str, dict]  # channel_name -> {"last_synced", "rows", "status"}
