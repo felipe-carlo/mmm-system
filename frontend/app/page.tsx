@@ -6,6 +6,7 @@ import MediaOptimizer from "./components/MediaOptimizer";
 import MetricsManager from "./components/MetricsManager";
 import Forecasting from "./components/Forecasting";
 import Insights from "./components/Insights";
+import GoogleSheetsSync from "./components/GoogleSheetsSync";
 
 const tabs = [
   { id: "roi360", label: "ROI 360", icon: "📊" },
@@ -13,6 +14,7 @@ const tabs = [
   { id: "metrics", label: "Metrics", icon: "📈" },
   { id: "forecast", label: "Forecasting", icon: "🔮" },
   { id: "insights", label: "Insights", icon: "💡" },
+  { id: "sheets", label: "Google Sheets", icon: "📋" },
 ];
 
 export default function Dashboard() {
@@ -71,6 +73,7 @@ export default function Dashboard() {
         {activeTab === "metrics" && <MetricsManager />}
         {activeTab === "forecast" && <Forecasting />}
         {activeTab === "insights" && <Insights />}
+        {activeTab === "sheets" && <GoogleSheetsSync />}
       </main>
     </div>
   );
