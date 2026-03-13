@@ -44,7 +44,7 @@ export default function MetricsManager() {
             <XAxis dataKey="week" tick={{ fontSize: 11 }} />
             <YAxis yAxisId="revenue" tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`} tick={{ fontSize: 11 }} />
             <YAxis yAxisId="spend" orientation="right" tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`} tick={{ fontSize: 11 }} />
-            <Tooltip formatter={(v: number) => fmt(v)} />
+            <Tooltip formatter={(v) => fmt(Number(v))} />
             <Line yAxisId="revenue" type="monotone" dataKey="revenue" stroke="var(--primary)" strokeWidth={2.5} name="Receita" dot={false} />
             <Line yAxisId="spend" type="monotone" dataKey="spend" stroke="var(--muted)" strokeWidth={1.5} strokeDasharray="5 5" name="Investimento" dot={false} />
           </LineChart>
